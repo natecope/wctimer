@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="wctimer_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" id="n9Q-WY-Ecn">
+                            <items>
+                                <timer width="87" alignment="center" textAlignment="center" id="Z5e-e1-KDD">
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="lqT-YU-hIe">
+                            <connections>
+                                <action selector="startButtonPressed" destination="AgC-eL-Hgc" id="dpS-KO-yxz"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="0.50980392159999999" green="0.54117647059999996" blue="0.35289351851851852" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="watchTimer" destination="Z5e-e1-KDD" id="mnp-rE-tp5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="133"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="wBb-3N-PyJ">
+            <objects>
+                <glanceController id="s2K-FW-JMV">
+                    <items>
+                        <group alignment="left" id="JhN-bm-4uJ"/>
+                        <group alignment="left" id="l6J-zn-poR"/>
+                    </items>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="220" y="373"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="wctimer_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
